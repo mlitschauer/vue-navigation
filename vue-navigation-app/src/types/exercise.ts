@@ -6,4 +6,5 @@ export interface Exercise {
   description: string
   execution: string[]
   alternatives: number[]
+  image?: string
 }

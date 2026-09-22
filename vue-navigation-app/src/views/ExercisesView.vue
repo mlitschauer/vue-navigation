@@ -34,7 +34,7 @@ function resetFilters(): void {
 </script>
 
 <template>
-  <main class="exercises-view">
+  <section class="exercises-view">
     <header class="exercises-view__header">
       <h1>Übungsübersicht</h1>
       <p>Alle verfügbaren Übungen</p>
@@ -53,7 +53,7 @@ function resetFilters(): void {
 
     <section aria-labelledby="exercise-list-title">
       <h2 id="exercise-list-title" class="visually-hidden">Übungen</h2>
-      <div v-if="filteredExercises.length" class="exercise-grid">
+      <div v-if="filteredExercises.length" class="card-grid">
         <ExerciseCard
           v-for="exercise in filteredExercises"
           :key="exercise.id"
@@ -69,7 +69,7 @@ function resetFilters(): void {
         <p>Versuche einen anderen Suchbegriff oder Filter.</p>
       </div>
     </section>
-  </main>
+  </section>
 </template>
 
 <style scoped>
@@ -102,12 +102,6 @@ function resetFilters(): void {
   color: #555;
 }
 
-.exercise-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-
 .empty-state {
   padding: 1.5rem;
   border: 1px solid #ddd;
@@ -119,31 +113,9 @@ function resetFilters(): void {
   color: #555;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-@media (min-width: 40.01rem) and (max-width: 56rem) {
-  .exercise-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
 @media (max-width: 40rem) {
   .exercises-view {
     padding: 1rem;
-  }
-
-  .exercise-grid {
-    grid-template-columns: 1fr;
   }
 }
 </style>

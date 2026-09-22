@@ -10,6 +10,11 @@ const router = createRouter({
       component: () => import('@/views/TrainingsView.vue'),
     },
     {
+      path: '/trainings/new',
+      name: 'training-create',
+      component: () => import('@/views/TrainingCreateView.vue'),
+    },
+    {
       path: '/trainings/:id',
       name: 'training-detail',
       component: () => import('@/views/TrainingDetailView.vue'),

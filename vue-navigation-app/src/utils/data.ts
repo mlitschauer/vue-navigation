@@ -1,5 +1,5 @@
 import { exercises } from '@/data/exercises'
-import { trainings } from '@/data/trainings'
+import { useTrainingsStore } from '@/stores/trainings'
 import type { Exercise } from '@/types/exercise'
 import type { Training } from '@/types/training'
 
@@ -16,11 +16,11 @@ export function getExerciseById(id: number | string): Exercise | undefined {
 
 export function getTrainingById(id: number | string): Training | undefined {
   const parsedId = parseId(id)
-  return trainings.find((training) => training.id === parsedId)
+  return parsedId === undefined ? undefined : useTrainingsStore().getTrainingById(parsedId)
 }
 
 export function getExerciseAlternatives(exercise: Exercise): Exercise[] {
-  return exercise.alternatives
+  return [...new Set(exercise.alternatives)].filter((id) => id !== exercise.id)
     .map(getExerciseById)
     .filter((alternative): alternative is Exercise => alternative !== undefined)
 }

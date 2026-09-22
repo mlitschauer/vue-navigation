@@ -55,7 +55,7 @@ defineEmits<{
       </select>
     </label>
 
-    <button class="exercise-filter__reset" type="button" @click="$emit('reset')">
+    <button class="btn btn--secondary" type="button" @click="$emit('reset')">
       Filter zurücksetzen
     </button>
   </div>
@@ -77,8 +77,7 @@ defineEmits<{
 }
 
 input,
-select,
-button {
+select {
   min-width: 0;
   padding: 0.5rem;
   color: inherit;
@@ -86,17 +85,6 @@ button {
   border: 1px solid #bbb;
   border-radius: 0.25rem;
   font: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-input:focus-visible,
-select:focus-visible,
-button:focus-visible {
-  outline: 2px solid #333;
-  outline-offset: 2px;
 }
 
 @media (max-width: 56rem) {

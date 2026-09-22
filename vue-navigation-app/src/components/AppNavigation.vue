@@ -11,7 +11,7 @@ const route = useRoute()
     <nav class="nav" aria-label="Hauptnavigation">
       <RouterLink
         :to="{ name: 'trainings' }"
-        :class="{ 'router-link-active': route.name === 'training-detail' }"
+        :class="{ 'router-link-active': route.name === 'training-detail' || route.name === 'training-create' }"
       >Trainingseinheiten</RouterLink>
       <RouterLink
         :to="{ name: 'exercises' }"

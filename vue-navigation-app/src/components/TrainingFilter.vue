@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { trainingTypes } from '@/types/training'
 defineProps<{
   selectedType: string
   sortOrder: 'newest' | 'oldest'
@@ -19,12 +20,7 @@ defineEmits<{
         @change="$emit('update:selectedType', ($event.target as HTMLSelectElement).value)"
       >
         <option value="all">Alle</option>
-        <option value="Push">Push</option>
-        <option value="Pull">Pull</option>
-        <option value="Legs">Legs</option>
-        <option value="Upper Body">Upper Body</option>
-        <option value="Lower Body">Lower Body</option>
-        <option value="Full Body">Full Body</option>
+        <option v-for="type in trainingTypes" :key="type" :value="type">{{ type }}</option>
       </select>
     </label>
 

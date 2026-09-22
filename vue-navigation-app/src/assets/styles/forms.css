@@ -1,0 +1,10 @@
+/* Ergänzende Formularregeln nutzen die vorhandenen Trainings-Tokens und Buttons. */
+.form-panel { padding: var(--space-4); background: var(--color-card); border: 1px solid var(--color-border); border-radius: var(--radius-sm); min-width: 0; }
+.form-field { display: grid; align-content: start; gap: var(--space-2); min-width: 0; font-weight: 600; }
+.form-field input, .form-field select { width: 100%; min-width: 0; min-height: 3rem; padding: var(--space-2); color: var(--color-text); background: var(--color-secondary); border: 1px solid var(--color-text-muted); border-radius: var(--radius-sm); font: inherit; }
+.form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
+.field-error { color: #a41e25; font-size: 0.875rem; font-weight: 500; overflow-wrap: anywhere; }
+.form-field [aria-invalid="true"] { border-color: #a41e25; }
+.btn--small { padding-inline: var(--space-4); font-size: 0.875rem; }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
