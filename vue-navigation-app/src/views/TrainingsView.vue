@@ -2,14 +2,6 @@
   <section class="trainings-view">
     <header class="trainings-view__header">
       <h1>Meine Trainings</h1>
-      <img
-        class="trainings-view__hero"
-        :src="trainingsHero"
-        alt="Zwei Sportler beim Training im Fitnessstudio"
-        width="1781"
-        height="665"
-        fetchpriority="high"
-      >
     </header>
     <div class="trainings-view__actions">
       <p>Vergangene Trainingseinheiten</p>
@@ -52,7 +44,6 @@ import TrainingFilter from '@/components/TrainingFilter.vue'
 import { RouterLink } from 'vue-router'
 import { storeToRefs } from 'pinia'
 import { useTrainingsStore } from '@/stores/trainings'
-import trainingsHero from '@/assets/images/trainings-hero.png'
 const { trainings, storageWarning } = storeToRefs(useTrainingsStore())
 
 const selectedType = ref('all')
@@ -85,18 +76,6 @@ const filteredAndSortedTrainings = computed(() => {
 .trainings-view__header h1 {
   margin-bottom: var(--space-8);
   text-align: left;
-}
-
-.trainings-view__hero {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 2.9 / 1;
-  min-height: 10rem;
-  max-height: 24rem;
-  object-fit: cover;
-  object-position: center;
-  border-radius: var(--radius-lg);
 }
 
 .trainings-view__actions {
